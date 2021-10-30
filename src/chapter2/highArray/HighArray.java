@@ -71,4 +71,21 @@ public class HighArray {
             return max;
         }
     }
+
+    // Измените метод getMax() так, чтобы элемент с наибольшем ключом не только возвращался
+    // методом, но и удалялся из массива. Присвойте новой версии имя removeMax().
+    public long removeMax() {
+        if (nElems == 0) {
+            return -1;
+        } else {
+            long max = 0;
+            for (int i = 0; i < nElems; i++) {
+                if (a[i] > max) {
+                    max = a[i];
+                }
+            }
+            delete(max);
+            return max;
+        }
+    }
 }
