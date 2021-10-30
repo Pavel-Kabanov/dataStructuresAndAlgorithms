@@ -30,5 +30,7 @@ public class HighArrayApp {
         arr.delete(99);
 
         arr.display();
+
+        System.out.println("Max value in array is " + arr.getMax() + ".");
     }
 }

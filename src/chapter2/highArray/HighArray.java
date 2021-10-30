@@ -53,4 +53,22 @@ public class HighArray {
         }
         System.out.println("");
     }
+
+    // Добавьте в класс HightArray из программы highArray.java метод getMax(), который
+    // возвращает наибольшее значение ключа в массиве или -1, если массив пуст. Добавьте в
+    // main() код для тестирования нового метода. Считайте, что все ключи являются
+    // положительными числами.
+    public long getMax() {
+        if (nElems == 0) {
+            return -1;
+        } else {
+            long max = 0;
+            for (int i = 0; i < nElems; i++) {
+                if (a[i] > max) {
+                    max = a[i];
+                }
+            }
+            return max;
+        }
+    }
 }
