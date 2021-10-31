@@ -54,7 +54,7 @@ public class HighArray {
         System.out.println("");
     }
 
-//     2.1 Добавьте в класс HightArray из программы highArray.java метод getMax(), который
+    //     2.1 Добавьте в класс HightArray из программы highArray.java метод getMax(), который
 //     возвращает наибольшее значение ключа в массиве или -1, если массив пуст. Добавьте в
 //     main() код для тестирования нового метода. Считайте, что все ключи являются
 //     положительными числами.
@@ -72,7 +72,7 @@ public class HighArray {
         }
     }
 
-//     2.2 Измените метод getMax() так, чтобы элемент с наибольшем ключом не только возвращался
+    //     2.2 Измените метод getMax() так, чтобы элемент с наибольшем ключом не только возвращался
 //     методом, но и удалялся из массива. Присвойте новой версии имя removeMax().
     public long removeMax() {
         long max = getMax();
@@ -80,7 +80,7 @@ public class HighArray {
         return max;
     }
 
-//    2.3 Реализуйте алгоритм сортировки
+    //    2.3 Реализуйте алгоритм сортировки
     public void sort() {
         for (int i = 0; i < nElems - 1; i++) {
             for (int j = 0; j < nElems - 1; j++) {
@@ -89,6 +89,21 @@ public class HighArray {
                     tmp = a[j + 1];
                     a[j + 1] = a[j];
                     a[j] = tmp;
+                }
+            }
+        }
+    }
+
+    //    2.5 Добавьте метод удаляющий все дубликаты
+    public void noDups() {
+        for (int i = 0; i < nElems; i++) {
+            for (int k = i; k < nElems - 1; k++) {
+                if (a[i] == a[k + 1]) {
+                    for (int j = k + 1; j < nElems; j++) {
+                        a[j] = a[j + 1];
+                    }
+                    k--;
+                    nElems--;
                 }
             }
         }
