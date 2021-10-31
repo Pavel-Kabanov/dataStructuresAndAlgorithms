@@ -34,13 +34,23 @@ public class OrderedArray {
         }
     }
 
+//    2.4 Измените программу orderedArray.java так, чтобы методы insert() и delete(), а так же
+//    метод find() использовали двоичный поиск.
     public void insert(long value) {
-        int j;
-        for (j = 0; j < nElems; j++) {
-            if (a[j] > value) {
-                break;
+        int j = 0;
+        int lowerBound = 0;
+        int upperBound = nElems - 1;
+
+        while (lowerBound <= upperBound) {
+            j = (lowerBound + upperBound) / 2;
+            if (a[j] < value) {
+                lowerBound = j + 1;
+                j++;
+            } else {
+                upperBound = j - 1;
             }
         }
+
         for (int k = nElems; k > j; k--) {
             a[k] = a[k - 1];
         }
@@ -48,6 +58,8 @@ public class OrderedArray {
         nElems++;
     }
 
+//    2.4 Измените программу orderedArray.java так, чтобы методы insert() и delete(), а так же
+//    метод find() использовали двоичный поиск.
     public boolean delete(long value) {
         int j = find(value);
         if (j == nElems) {
