@@ -30,5 +30,15 @@ public class orderedArrayApp {
         arr.delete(99);
 
         arr.display();
+
+        // Использование 2.4
+        long[] firstArray = new long[]{0, 10, 20, 30};
+        long[] secondArray = new long[]{0, 1, 20, 33, 34, 35};
+
+        arr.merge(firstArray, secondArray);
+
+        long[] newArr = arr.merge(firstArray, secondArray);
+
+        for (long l : newArr) System.out.print(l + " ");
     }
 }

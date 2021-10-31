@@ -34,7 +34,7 @@ public class OrderedArray {
         }
     }
 
-//    2.4 Измените программу orderedArray.java так, чтобы методы insert() и delete(), а так же
+    //    2.4 Измените программу orderedArray.java так, чтобы методы insert() и delete(), а так же
 //    метод find() использовали двоичный поиск.
     public void insert(long value) {
         int j = 0;
@@ -58,7 +58,7 @@ public class OrderedArray {
         nElems++;
     }
 
-//    2.4 Измените программу orderedArray.java так, чтобы методы insert() и delete(), а так же
+    //    2.4 Измените программу orderedArray.java так, чтобы методы insert() и delete(), а так же
 //    метод find() использовали двоичный поиск.
     public boolean delete(long value) {
         int j = find(value);
@@ -78,5 +78,31 @@ public class OrderedArray {
             System.out.print(a[j] + " ");
         }
         System.out.println("");
+    }
+
+    //    2.5 Добавьте метод объединяющий два упорядоченных массива в один упорядоченный
+//    приемный массив- алгоритм должен сравнивать ключи массивов и копировать меньший в Ф
+//    приемный массив.
+//    Задание сформулированно не до конца понятно, решение странное.
+    public long[] merge(long[] firstArrayToMerge, long[] secondArrayToMerge) {
+        long[] finalArray = new long[Math.max(firstArrayToMerge.length, secondArrayToMerge.length)];
+        if (firstArrayToMerge.length > secondArrayToMerge.length) {
+            int i = 0;
+            for (; i < secondArrayToMerge.length; i++) {
+                finalArray[i] = Math.min(firstArrayToMerge[i], secondArrayToMerge[i]);
+            }
+            for (; i < firstArrayToMerge.length; i++) {
+                finalArray[i] = firstArrayToMerge[i];
+            }
+        } else {
+            int i = 0;
+            for (; i < firstArrayToMerge.length; i++) {
+                finalArray[i] = Math.min(firstArrayToMerge[i], secondArrayToMerge[i]);
+            }
+            for (; i < secondArrayToMerge.length; i++) {
+                finalArray[i] = secondArrayToMerge[i];
+            }
+        }
+        return finalArray;
     }
 }
