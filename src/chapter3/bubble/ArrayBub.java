@@ -1,4 +1,4 @@
-package chapter3;
+package chapter3.bubble;
 
 public class ArrayBub {
     private long[] a;

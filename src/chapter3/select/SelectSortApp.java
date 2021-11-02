@@ -1,9 +1,11 @@
-package chapter3;
+package chapter3.select;
 
-public class BubbleSortApp {
+import chapter3.bubble.ArrayBub;
+
+public class SelectSortApp {
     public static void main(String[] args) {
         int maxSize = 100;
-        ArrayBub arr = new ArrayBub(maxSize);
+        ArraySel arr = new ArraySel(maxSize);
 
         arr.insert(77);
         arr.insert(99);
@@ -18,7 +20,7 @@ public class BubbleSortApp {
 
         arr.display();
 
-        arr.bubbleSort();
+        arr.selectSort();
         arr.display();
     }
 }
