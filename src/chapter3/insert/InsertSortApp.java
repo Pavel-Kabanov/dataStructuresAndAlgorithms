@@ -7,20 +7,20 @@ public class InsertSortApp {
 
         arr.insert(77);
         arr.insert(99);
-        arr.insert(44);
+        arr.insert(22);
         arr.insert(55);
         arr.insert(22);
         arr.insert(88);
         arr.insert(11);
         arr.insert(00);
-        arr.insert(66);
+        arr.insert(55);
         arr.insert(33);
 
-//        arr.display();
-
-        arr.insertSort();
-
         arr.display();
+
+//        arr.insertSort();
+
+//        arr.display();
 //        for (int i = 0; i < maxSize; i++) {
 //            arr.insert((long) (Math.random() * (maxSize - 1)));
 //        }
@@ -32,9 +32,11 @@ public class InsertSortApp {
 //        for (int i = 0; i < maxSize; i++) {
 //            arr.insert(i);
 //        }
-//
+
 //        arr.insertSort();
 
-        System.out.println(arr.median());
+//        System.out.println(arr.median());
+        arr.noDups();
+        arr.display();
     }
 }

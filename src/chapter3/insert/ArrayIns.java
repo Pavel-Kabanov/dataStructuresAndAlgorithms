@@ -49,4 +49,16 @@ public class ArrayIns {
             return (a[nElems / 2 - 1] + a[nElems / 2]) / 2;
         }
     }
+
+//    HW 3.3
+    public void noDups() {
+        insertSort();
+        for (int i = 0; i < nElems; i++) {
+            for (int j = i + 1; j < nElems; j++) {
+                if (a[j] == a[i]) {
+
+                }
+            }
+        }
+    }
 }
