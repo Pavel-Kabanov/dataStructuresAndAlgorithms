@@ -1,5 +1,7 @@
 package chapter3.select;
 
+import java.util.Calendar;
+
 public class ArraySel {
     private long[] a;
     private int nElems;
@@ -20,6 +22,7 @@ public class ArraySel {
     }
 
     public void selectSort() {
+        Long startTime = Calendar.getInstance().getTime().getTime();
         int out, in, min;
         for (out = 0; out < nElems - 1; out++) {
             min = out;
@@ -30,6 +33,8 @@ public class ArraySel {
             }
             swap(out, min);
         }
+        Long endTime = Calendar.getInstance().getTime().getTime();
+        System.out.println(String.format("Select sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1000));
     }
 
     private void swap(int one, int two) {
