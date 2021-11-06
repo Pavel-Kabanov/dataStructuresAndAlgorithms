@@ -30,6 +30,20 @@ public class ArrayBub {
         }
     }
 
+    public void bubbleSortUpgraded() {
+        int out, outRight, outLeft, in;
+        for (out = nElems - 1; out > 1; out--) {
+            for (in = 0; in < out; in++) {
+                if (a[in] > a[in + 1]) {
+                    swap(in, in + 1);
+                }
+                if (in - 1 >= 0 && a[in] < a[in - 1]) {
+                    swap(in, in - 1);
+                }
+            }
+        }
+    }
+
     private void swap(int one, int two) {
         long temp = a[one];
         a[one] = a[two];
