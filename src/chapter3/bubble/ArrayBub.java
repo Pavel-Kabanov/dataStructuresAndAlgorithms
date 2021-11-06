@@ -1,5 +1,7 @@
 package chapter3.bubble;
 
+import java.util.Calendar;
+
 public class ArrayBub {
     private long[] a;
     private int nElems;
@@ -20,6 +22,7 @@ public class ArrayBub {
     }
 
     public void bubbleSort() {
+        Long startTime = Calendar.getInstance().getTime().getTime();
         int out, in;
         for (out = nElems - 1; out > 1; out--) {
             for (in = 0; in < out; in++) {
@@ -28,9 +31,13 @@ public class ArrayBub {
                 }
             }
         }
+        Long endTime = Calendar.getInstance().getTime().getTime();
+        System.out.println(String.format("Bubble sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1000));
     }
 
     public void bubbleSortUpgraded() {
+        Long startTime = Calendar.getInstance().getTime().getTime();
+
         int out, outRight, outLeft, in;
         for (out = nElems - 1; out > 1; out--) {
             for (in = 0; in < out; in++) {
@@ -42,6 +49,8 @@ public class ArrayBub {
                 }
             }
         }
+        Long endTime = Calendar.getInstance().getTime().getTime();
+        System.out.println(String.format("Upgraded bubble sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1000));
     }
 
     private void swap(int one, int two) {
