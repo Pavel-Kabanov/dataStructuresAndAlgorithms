@@ -41,4 +41,12 @@ public class ArrayIns {
         System.out.println(String.format("Insert sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1000));
     }
 
+    public long median() {
+        insertSort();
+        if (nElems % 2 != 0) {
+            return a[nElems / 2];
+        } else {
+            return (a[nElems / 2 - 1] + a[nElems / 2]) / 2;
+        }
+    }
 }
