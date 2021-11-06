@@ -1,5 +1,7 @@
 package chapter3.insert;
 
+import java.util.Calendar;
+
 public class ArrayIns {
     private long[] a;
     private int nElems;
@@ -22,6 +24,7 @@ public class ArrayIns {
     }
 
     public void insertSort() {
+        Long startTime = Calendar.getInstance().getTime().getTime();
         int in, out;
 
         for (out = 1; out < nElems; out++) {
@@ -33,6 +36,9 @@ public class ArrayIns {
             }
             a[in] = temp;
         }
+
+        Long endTime = Calendar.getInstance().getTime().getTime();
+        System.out.println(String.format("Insert sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1000));
     }
 
 }
