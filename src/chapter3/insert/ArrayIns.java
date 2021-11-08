@@ -41,6 +41,33 @@ public class ArrayIns {
         System.out.println(String.format("Insert sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1000));
     }
 
+    // HW 3.5
+    public void insertSortWithCount() {
+        Long startTime = Calendar.getInstance().getTime().getTime();
+        int in, out;
+        int counterCopy = 0;
+        int counterComparison = 0;
+
+        for (out = 1; out < nElems; out++) {
+            long temp = a[out];
+            counterCopy++;
+            in = out;
+            while (in > 0 && a[in - 1] >= temp) {
+                a[in] = a[in - 1];
+                --in;
+                counterCopy++;
+                counterComparison++;
+            }
+            a[in] = temp;
+            counterCopy++;
+        }
+
+        System.out.println("counterCopy: " + counterCopy);
+        System.out.println("counterComparison: " + counterComparison);
+        Long endTime = Calendar.getInstance().getTime().getTime();
+        System.out.println(String.format("Insert sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1000));
+    }
+
     public long median() {
         insertSort();
         if (nElems % 2 != 0) {
@@ -50,7 +77,7 @@ public class ArrayIns {
         }
     }
 
-//    HW 3.3
+    //    HW 3.3
     public void noDups() {
         insertSort();
         for (int i = 0; i < nElems; i++) {
