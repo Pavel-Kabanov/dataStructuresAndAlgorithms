@@ -19,7 +19,8 @@ public class BubbleSortApp {
         arr.display();
 
 //        arr.bubbleSort();
-        arr.sortBubbleUpgraded();
+//        arr.sortBubbleUpgraded();
+        arr.sortEvenOdd();
         arr.display();
 
 //        for (int i = 0; i < maxSize; i++) {

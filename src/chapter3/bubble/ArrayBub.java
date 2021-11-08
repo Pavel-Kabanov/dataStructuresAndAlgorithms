@@ -62,9 +62,17 @@ public class ArrayBub {
     // HW 3.4
     public void sortEvenOdd() {
         for (int i = 0; i < nElems; i++) {
-            for (int j = 0; j < nElems; j++) {
-                if (a[j] % 2 != 0) {
-
+            if (i % 2 != 0) {
+                for (int j = 1; j < nElems - 1; j = j + 2) {
+                    if (a[j] > a[j + 1]) {
+                        swap(j, j + 1);
+                    }
+                }
+            } else {
+                for (int j = 0; j < nElems - 1; j = j + 2) {
+                    if (a[j] > a[j + 1]) {
+                        swap(j, j + 1);
+                    }
                 }
             }
         }
