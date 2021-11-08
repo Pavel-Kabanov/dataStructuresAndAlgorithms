@@ -77,15 +77,26 @@ public class ArrayIns {
         }
     }
 
-    //    HW 3.3
+    //    HW 3.3 and 3.6
     public void noDups() {
         insertSort();
-        for (int i = 0; i < nElems; i++) {
-            for (int j = i + 1; j < nElems; j++) {
-                if (a[j] == a[i]) {
 
+        long[] tmp = new long[nElems];
+        int i, j;
+
+        for (i = j = 0; i < nElems; i++) {
+            if (j == 0) {
+                tmp[j] = a[i];
+                j++;
+            } else {
+                if (tmp[j - 1] != a[i]) {
+                    tmp[j] = a[i];
+                    j++;
                 }
             }
         }
+
+        a = tmp;
+        nElems = j;
     }
 }

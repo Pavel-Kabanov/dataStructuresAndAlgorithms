@@ -33,10 +33,10 @@ public class InsertSortApp {
 //            arr.insert(i);
 //        }
 
-        arr.insertSortWithCount();
+//        arr.insertSortWithCount();
 
 //        System.out.println(arr.median());
-//        arr.noDups();
+        arr.noDups();
         arr.display();
     }
 }
