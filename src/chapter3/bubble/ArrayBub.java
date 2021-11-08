@@ -21,7 +21,7 @@ public class ArrayBub {
         System.out.println("");
     }
 
-    public void bubbleSort() {
+    public void sortBubble() {
         Long startTime = Calendar.getInstance().getTime().getTime();
         int out, in;
         for (out = nElems - 1; out > 1; out--) {
@@ -35,7 +35,7 @@ public class ArrayBub {
         System.out.println(String.format("Bubble sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1000));
     }
 
-    public void bubbleSortUpgraded() {
+    public void sortBubbleUpgraded() {
         Long startTime = Calendar.getInstance().getTime().getTime();
 
         int out, outRight, outLeft, in;
@@ -57,5 +57,16 @@ public class ArrayBub {
         long temp = a[one];
         a[one] = a[two];
         a[two] = temp;
+    }
+
+    // HW 3.4
+    public void sortEvenOdd() {
+        for (int i = 0; i < nElems; i++) {
+            for (int j = 0; j < nElems; j++) {
+                if (a[j] % 2 != 0) {
+
+                }
+            }
+        }
     }
 }
