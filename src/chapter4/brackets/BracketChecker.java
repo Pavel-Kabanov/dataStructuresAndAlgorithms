@@ -29,10 +29,19 @@ public class BracketChecker {
                         if ((ch == '}' && chx != '{') ||
                                 (ch == ']' && chx != '[') ||
                                 (ch == ')' && chx != '(')) {
-                            System.out.println();
+                            System.out.println("Error: " + ch + " at " + j);
                         }
+                    } else {
+                        System.out.println("Error: " + ch + " at " + j);
                     }
+                    break;
+                default:
+                    break;
             }
+        }
+
+        if (!theStack.isEmpty()) {
+            System.out.println("Error: missing right delimiter");
         }
     }
 }
