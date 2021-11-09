@@ -61,6 +61,8 @@ public class ArrayBub {
 
     // HW 3.4
     public void sortEvenOdd() {
+        Long startTime = Calendar.getInstance().getTime().getTime();
+
         for (int i = 0; i < nElems; i++) {
             if (i % 2 != 0) {
                 for (int j = 1; j < nElems - 1; j = j + 2) {
@@ -76,5 +78,8 @@ public class ArrayBub {
                 }
             }
         }
+
+        Long endTime = Calendar.getInstance().getTime().getTime();
+        System.out.println(String.format("Even/odd sorting of %s item(s) took %s second(s)", nElems, (endTime - startTime) / 1));
     }
 }
